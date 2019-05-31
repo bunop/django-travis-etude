@@ -1,10 +1,13 @@
-
 services:
 - docker
-
+branches:
+  only:
+  - master
 install:
 - docker-compose pull
 - docker-compose build
-
 script:
 - docker-compose --version
+env:
+  global:
+    secure: LTWSC51OTCI1USxk5gYBPs/4Su3gsybkUxFp09ET16/YJWml7Z5Jhb/ZJ6HssLCOknX5qFhSbEnBvKmgkVJjukOon4Z0qBgAyXuC4rze80CgxajmY0FiYZwRXJZ7btfrG2rWBiM5l01XPqwKUqeuPzbTrNxnxgX3Z3T7MTB3IqD6BaJq+4q+gqLMEyodcnu7z0Y5WJu7g9LYDYfi1RVVm8t68tefstZbPxSBIFVCQGE+gmXuM81kWmRa4NXupNv7JAUHiGq/ItbBXIHbgJauK2Mm4lzbslPcc0TD0bqjzG9S9+sC+GCH5tyd1PU3YIH53I4N6r0sN51ZjI/3TJYfwzfVHpfHyF0o3ydAxaO88+Jw/GawJzxLt8666qBSWghJFHbrAjUcohrVDVCNMm01eHnUums86TshKICeoQJwSb0dzzsfmcEdGSfK61BLs9BCSGcjMP+Het2dIU+4eCZyYe/VpMZWrfoyaRLwYGbPKwRRBUII16Wb6GASUsnTXCsv3Fy7dzAwj8xPnMOzjAXL57lotCZ6SU15wREMS+MKnmiZ5MfL2ZZQOXwOAUTQJm+txtu35EsVHf0jqogot5N2FHQnVrJW0edusLlpSabtvcFtiUlFFXdXaJYsQuEmK6gPasIXpp3FaK00tF7N8+t052d7tgVrqtu/+lNm8rX8Kqg=

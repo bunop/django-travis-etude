@@ -1,4 +1,13 @@
 
+Django Travis Etude
+===================
+
+This project is inspired from https://github.com/devartis/djangodocker repositories
+(and its guides) and https://github.com/cnr-ibba/dockerfiles/tree/master/compose/django
+The aim is to configure a CI environment in order to perform unittest, passing
+secret variables as suggested by [Travis CI encryption-keys](https://docs.travis-ci.com/user/encryption-keys/)
+documentation using a complex docker-composed environment.
+
 Running Django+MySQL-uwsgi with docker-compose
 ==============================================
 
