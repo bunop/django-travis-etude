@@ -43,5 +43,8 @@ EXPOSE 8000
 # This environment variable force stdin, stdout and stderr to be totally unbuffered
 ENV PYTHONUNBUFFERED 1
 
+# https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
+COPY wait-for-mysql.sh /root/
+
 # Execute a default command
 CMD ["/bin/bash"]
