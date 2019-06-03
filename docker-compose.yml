@@ -19,6 +19,11 @@ services:
         source: ./mysql-data/
         target: /var/lib/mysql
 
+      - type: bind
+        source: ./mysql-initdb/
+        target: /docker-entrypoint-initdb.d/
+        read_only: true
+
 
   uwsgi:
     # a custom image for django
