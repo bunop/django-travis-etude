@@ -3,3 +3,5 @@ mysqlclient
 psycopg2
 Django==2.2.1
 python-decouple
+coverage
+pytest-django
