@@ -1,10 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Jun  7 17:11:08 2019
+
+@author: Paolo Cozzi <cozzi@ibba.cnr.it>
+"""
+
 import datetime
 
 from django.test import TestCase
 from django.utils import timezone
 from django.urls import reverse
 
-from .models import Question
+from ..models import Question
 
 
 class QuestionModelTests(TestCase):
