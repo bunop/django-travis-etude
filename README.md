@@ -2,6 +2,8 @@
 Django Travis Etude
 ===================
 
+[![Build Status](https://travis-ci.org/bunop/django-travis-etude.svg?branch=master)](https://travis-ci.org/bunop/django-travis-etude)
+
 This project is inspired from https://github.com/devartis/djangodocker repositories
 (and its guides) and https://github.com/cnr-ibba/dockerfiles/tree/master/compose/django
 The aim is to configure a CI environment in order to perform unittest, passing
