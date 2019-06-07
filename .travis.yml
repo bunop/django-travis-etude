@@ -11,6 +11,7 @@ install:
 
 script:
 - docker-compose run --rm uwsgi /root/wait-for-mysql.sh coverage run --source='.' -m py.test
+- coveralls
 
 env:
   global:
