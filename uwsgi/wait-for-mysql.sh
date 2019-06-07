@@ -12,7 +12,7 @@ MAX_STEPS=6
 
 until mysql -h db -u ${MYSITE_USER} --password=${MYSITE_PASSWORD} -N -s -e "SHOW GRANTS FOR '${MYSITE_USER}'@'%'" || [ ${NEXT_WAIT_TIME} -eq ${MAX_STEPS} ]; do
   >&2 echo "MySQL is unavailable - sleeping"
-  sleep 5
+  sleep 10
   NEXT_WAIT_TIME=$((NEXT_WAIT_TIME+1))
 done
 
