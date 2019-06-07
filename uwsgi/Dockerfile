@@ -20,7 +20,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     postgresql-client \
     mysql-client \
     sqlite3 && \
-    git && \
     apt-get clean && \
     apt-get autoclean && \
     rm -rf /var/lib/apt/lists/*
