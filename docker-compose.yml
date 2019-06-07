@@ -35,6 +35,7 @@ services:
       MYSITE_USER: ${MYSQL_USER}
       MYSITE_PASSWORD: ${MYSQL_PASSWORD}
       DEBUG: ${DEBUG}
+      COVERALLS_REPO_TOKEN: ${COVERALLS_REPO_TOKEN}
 
     # exec a different command from image
     command: uwsgi --ini /var/uwsgi/mysite_uwsgi.ini
