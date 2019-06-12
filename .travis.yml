@@ -5,8 +5,7 @@ branches:
     - master
     - devel
 before_install:
-  - sudo apt-get install python3
-  - sudo pip install coveralls
+  - sudo pip3 install coveralls
 install:
   - docker-compose pull
   - docker-compose build
@@ -14,6 +13,7 @@ install:
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
 script:
   - docker-compose run --rm uwsgi /root/wait-for-mysql.sh coverage run --source='.' -m py.test
+after_script:
   - coveralls
 env:
   global:
