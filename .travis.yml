@@ -5,6 +5,7 @@ branches:
     - master
     - devel
 before_install:
+  - sudo apt-get install python3
   - sudo pip install coveralls
 install:
   - docker-compose pull
