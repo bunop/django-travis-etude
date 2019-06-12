@@ -1,16 +1,19 @@
 services:
-- docker
+  - docker
 branches:
   only:
-  - master
-  - devel
+    - master
+    - devel
+before_install:
+  - sudo pip install coveralls
 install:
-- docker-compose pull
-- docker-compose build
+  - docker-compose pull
+  - docker-compose build
 script:
-- docker-compose run --rm uwsgi /root/wait-for-mysql.sh coverage run --source='.'
-  -m py.test
-- docker-compose run --rm uwsgi coveralls
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
+  - docker-compose run --rm uwsgi /root/wait-for-mysql.sh coverage run --source='.' -m py.test
+  - docker-compose run --rm uwsgi coveralls
 env:
   global:
   - secure: SfxMd4O9a9D/fM30qRf5PCs2MvvYcsg56LRAR1m01RPofoqyuMjFUVR5pOsI2LMKHOcD9ULmw8gitQlCajAOczpU+o5Jq4WqtUD3RpyP011miNTtdUCC/CUiTKpL7ZoyctDIgcallmWM84Js9bwGPaaC3g3nMPAPvQttJOhUJDRBRi/ZhfiTXO1TWdwooL211+lYhW3uzXyqmC9iANwt3oPoiDH+6tz8aNmmDblHkDP6eI7g1v9OLoZkdWFLB9+MamAeUsI4+MB869g43K73QcFM9RG2Kj96sOkEG4LIaiK3lbY7ke2mHpkmxtBKGIoaxXLwJFu79bd9OdHZt0PeliUAw5OQWyi4U29JqEXQ5fwRJG6FTrtMkX2zdDGqRlFLGF8O2CfyE3c9Kg9C6v5/udPH3/XM9s/WgliVISbCFhZEEStS4oS8h62g4O6aSvWD5ZxS++oEV5GCR/elWRMnGTwtrZfWydJG4NrdVVP33Sif7tWKBrA84EvSGJJhWTKtxcWnK9Yh8JsORJed3SL3fU7l7ZjrtiLL8ZQ+f1gt9AhpQGVDh3n7Pcid6yCIBL00X2fXfsFWby6GQJjUkk/mhiHs2J9YVgl4DUzfiW0TZl/3ZDS2nfnQyEx6j2Kho9BjGZ/KR0hYBYf5U4a4iNsH4/1Hlyy9si2XxmRBC+QLob4=
