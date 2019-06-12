@@ -36,6 +36,10 @@ services:
       MYSITE_PASSWORD: ${MYSQL_PASSWORD}
       DEBUG: ${DEBUG}
       COVERALLS_REPO_TOKEN: ${COVERALLS_REPO_TOKEN}
+      TRAVIS: ${TRAVIS}
+      TRAVIS_JOB_ID: ${TRAVIS_JOB_ID}
+      TRAVIS_BRANCH: ${TRAVIS_BRANCH}
+      TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}
 
     # exec a different command from image
     command: uwsgi --ini /var/uwsgi/mysite_uwsgi.ini
