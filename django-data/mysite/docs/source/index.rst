@@ -10,6 +10,9 @@ Welcome to Django Travis Etude's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. automodule:: polls.views
+   :members:
+   :show-inheritance:
 
 
 Indices and tables
