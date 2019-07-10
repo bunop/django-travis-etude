@@ -4,6 +4,7 @@ Django Travis Etude
 
 [![Build Status](https://travis-ci.org/bunop/django-travis-etude.svg?branch=master)](https://travis-ci.org/bunop/django-travis-etude)
 [![Coverage Status](https://coveralls.io/repos/github/bunop/django-travis-etude/badge.svg?branch=master)](https://coveralls.io/github/bunop/django-travis-etude?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bunop/django-travis-etude/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bunop/django-travis-etude/?branch=master)
 
 This project is inspired from https://github.com/devartis/djangodocker repositories
 (and its guides) and https://github.com/cnr-ibba/dockerfiles/tree/master/compose/django

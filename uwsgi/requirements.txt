@@ -6,3 +6,4 @@ python-decouple
 coverage
 coveralls
 pytest-django
+scrutinizer-ocular
